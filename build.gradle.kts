@@ -187,7 +187,7 @@ configure(
         project(":utbot-framework-api"),
         project(":utbot-java-fuzzing"),
         project(":utbot-instrumentation"),
-        project(":utbot-rd"),
+        project(":utbot-light"),
         project(":utbot-summary")
     )
 ) {
