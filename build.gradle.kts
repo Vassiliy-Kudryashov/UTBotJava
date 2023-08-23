@@ -11,7 +11,7 @@ val collectionsVersion: String by project
 val junit5Version: String by project
 val dateBasedVersion: String = SimpleDateFormat("YYYY.MM").format(System.currentTimeMillis()) // CI proceeds the same way
 
-version = semVer ?: "$dateBasedVersion-SNAPSHOT"
+version = semVer ?: "$dateBasedVersion"
 
 plugins {
     `java-library`
