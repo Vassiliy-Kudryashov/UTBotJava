@@ -24,7 +24,7 @@ import com.jetbrains.python.psi.PyElement
 import com.jetbrains.python.psi.PyFile
 import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.resolve.QualifiedNameFinder
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.kotlin.idea.util.module
 import org.jetbrains.kotlin.idea.util.projectStructure.sdk
 import org.utbot.common.PathUtil.toPath
@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.io.path.Path
 
 object PythonDialogProcessor {
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
 
     enum class ProgressRange(val from : Double, val to: Double) {
         ANALYZE(from = 0.0, to = 0.1),

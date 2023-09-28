@@ -1,6 +1,6 @@
 package org.utbot.testing
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.utbot.common.FileUtil
 import org.utbot.common.measureTime
@@ -24,7 +24,7 @@ import java.io.File
 import java.nio.file.Path
 import kotlin.reflect.KClass
 
-internal val logger = KotlinLogging.logger {}
+internal val logger =  UtLogging.logger {}
 
 class TestCodeGeneratorPipeline(
     private val testInfrastructureConfiguration: TestInfrastructureConfiguration,

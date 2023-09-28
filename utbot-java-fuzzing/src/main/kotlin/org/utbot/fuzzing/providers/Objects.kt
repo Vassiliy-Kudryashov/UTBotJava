@@ -1,6 +1,6 @@
 package org.utbot.fuzzing.providers
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.UtSettings
 import org.utbot.framework.plugin.api.*
 import org.utbot.framework.plugin.api.util.*
@@ -14,7 +14,7 @@ import java.lang.reflect.Member
 import java.lang.reflect.Method
 import java.lang.reflect.Modifier
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 private fun isKnownTypes(type: ClassId): Boolean {
     return type == stringClassId

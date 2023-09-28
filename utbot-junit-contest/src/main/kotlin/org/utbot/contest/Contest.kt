@@ -1,6 +1,6 @@
 package org.utbot.contest
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.objectweb.asm.Type
 import org.utbot.common.FileUtil
 import org.utbot.common.measureTime
@@ -59,7 +59,7 @@ import org.utbot.framework.util.jimpleBody
 import org.utbot.summary.summarizeAll
 
 internal const val junitVersion = 4
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 @Suppress("unused")
 object Contest

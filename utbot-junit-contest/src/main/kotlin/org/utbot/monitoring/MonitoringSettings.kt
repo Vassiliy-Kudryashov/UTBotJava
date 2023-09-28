@@ -1,10 +1,10 @@
 package org.utbot.monitoring
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.AbstractSettings
 
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 private const val defaultKeyForSettingsPath = "utbot.monitoring.settings.path"
 

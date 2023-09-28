@@ -6,7 +6,7 @@ import com.intellij.openapi.progress.ProgressIndicator
 import org.utbot.common.PathUtil.classFqnToPath
 import org.utbot.intellij.plugin.ui.utils.getOrCreateSarifReportsPath
 import java.util.concurrent.CountDownLatch
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.ClassId
 import org.utbot.intellij.plugin.generator.UtTestsDialogProcessor
 import org.utbot.intellij.plugin.models.GenerateTestsModel
@@ -16,7 +16,7 @@ import org.utbot.intellij.plugin.util.IntelliJApiHelper
 import java.nio.file.Path
 
 object SarifReportIdea {
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
     /**
      * Creates the SARIF report by calling the SarifReport.createReport(),
      * saves it to test resources directory and notifies the user about the creation.

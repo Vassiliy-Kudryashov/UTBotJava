@@ -4,7 +4,7 @@ import org.utbot.framework.codegen.domain.ParametrizedTestSource
 import org.utbot.framework.codegen.domain.ProjectType
 import org.utbot.framework.context.simple.SimpleApplicationContext
 import org.utbot.framework.context.simple.SimpleMockerContext
-import org.utbot.framework.context.spring.SpringApplicationContextImpl
+//import org.utbot.framework.context.spring.SpringApplicationContextImpl
 import org.utbot.framework.plugin.api.CodegenLanguage
 import org.utbot.framework.plugin.api.MockStrategyApi
 import org.utbot.framework.plugin.api.SpringSettings
@@ -49,9 +49,9 @@ val defaultApplicationContext = SimpleApplicationContext(
     )
 )
 
-val springNoConfigApplicationContext = SpringApplicationContextImpl(
-    delegateContext = defaultApplicationContext,
-    springTestType = SpringTestType.UNIT_TEST,
-    springSettings = SpringSettings.AbsentSpringSettings,
-    beanDefinitions = emptyList()
-)
+//val springNoConfigApplicationContext = SpringApplicationContextImpl(
+//    delegateContext = defaultApplicationContext,
+//    springTestType = SpringTestType.UNIT_TEST,
+//    springSettings = SpringSettings.AbsentSpringSettings,
+//    beanDefinitions = emptyList()
+//)

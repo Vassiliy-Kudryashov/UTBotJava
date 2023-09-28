@@ -1,13 +1,13 @@
 package org.utbot.python.newtyping.mypy
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.python.PythonMethod
 import org.utbot.python.code.PythonCodeGenerator.generateMypyCheckCode
 import org.utbot.python.utils.TemporaryFileManager
 import org.utbot.python.utils.runCommand
 import java.io.File
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 fun readMypyAnnotationStorageAndInitialErrors(
     pythonPath: String,

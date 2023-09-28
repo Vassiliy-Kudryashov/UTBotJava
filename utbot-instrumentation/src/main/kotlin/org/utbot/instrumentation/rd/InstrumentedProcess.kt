@@ -1,7 +1,7 @@
 package org.utbot.instrumentation.rd
 
 import com.jetbrains.rd.util.lifetime.Lifetime
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.JarUtils
 import org.utbot.common.debug
 import org.utbot.common.getPid
@@ -30,7 +30,7 @@ import org.utbot.rd.startUtProcessWithRdServer
 import org.utbot.rd.terminateOnException
 import java.io.File
 
-private val logger = KotlinLogging.logger { }
+private val logger =  UtLogging.logger { }
 
 private const val UTBOT_INSTRUMENTATION_JAR_FILENAME = "utbot-instrumentation-shadow.jar"
 

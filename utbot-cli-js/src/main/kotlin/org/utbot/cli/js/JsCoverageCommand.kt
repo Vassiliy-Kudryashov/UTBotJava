@@ -5,7 +5,7 @@ import com.github.ajalt.clikt.parameters.options.check
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.json.JSONArray
 import org.json.JSONObject
 import org.utbot.cli.js.JsUtils.makeAbsolutePath
@@ -17,7 +17,7 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import javax.xml.parsers.DocumentBuilderFactory
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class JsCoverageCommand : CliktCommand(name = "coverage_js", help = "Get tests coverage for the specified file.") {
 

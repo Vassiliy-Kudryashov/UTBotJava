@@ -5,9 +5,9 @@ import org.utbot.common.withAccessibility
 import org.utbot.framework.UtSettings
 import org.utbot.framework.plugin.api.CodegenLanguage
 import org.utbot.framework.plugin.api.UtMethodTestSet
-import org.utbot.instrumentation.ConcreteExecutor
+//import org.utbot.instrumentation.ConcreteExecutor
 import kotlin.reflect.KClass
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
@@ -82,7 +82,7 @@ abstract class CodeGenerationIntegrationTest(
             logger.info("Package $pkg is not fully processed yet, code generation will be tested later")
             return
         }
-        ConcreteExecutor.defaultPool.close()
+//        ConcreteExecutor.defaultPool.close()
 
         FileUtil.clearTempDirectory(UtSettings.daysLimitForTempFiles)
 
@@ -169,7 +169,7 @@ abstract class CodeGenerationIntegrationTest(
 
         private var runningTestsNumber: Int = 0
 
-        internal val logger = KotlinLogging.logger { }
+        internal val logger =  UtLogging.logger { }
 
         @JvmStatic
         protected val testCaseGeneratorCache = mutableMapOf<BuildInfo, TestSpecificTestCaseGenerator>()

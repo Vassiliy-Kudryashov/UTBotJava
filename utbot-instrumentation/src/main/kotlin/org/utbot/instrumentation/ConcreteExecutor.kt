@@ -15,7 +15,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.InstrumentedProcessDeathException
 import org.utbot.common.logException
 import org.utbot.framework.plugin.api.ClassId
@@ -33,7 +33,7 @@ import org.utbot.instrumentation.util.InstrumentedProcessError
 import org.utbot.rd.generated.synchronizationModel
 import org.utbot.rd.loggers.overrideDefaultRdLoggerFactoryWithKLogger
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 /**
  * Creates [ConcreteExecutor], which delegates `execute` calls to the instrumented process, and applies the given [block] to it.

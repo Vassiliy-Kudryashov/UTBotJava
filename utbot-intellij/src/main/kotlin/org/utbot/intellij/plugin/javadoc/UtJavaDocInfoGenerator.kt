@@ -15,7 +15,7 @@ import com.intellij.psi.javadoc.PsiDocComment
 import com.intellij.psi.javadoc.PsiDocTag
 import com.intellij.psi.javadoc.PsiDocToken
 import com.intellij.psi.javadoc.PsiInlineDocTag
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 
 private const val LINK_TAG = "link"
 private const val LINKPLAIN_TAG = "linkplain"
@@ -28,7 +28,7 @@ private const val CODE_TAG_START = "<code>"
 private const val CODE_TAG_END = "</code>"
 private const val BR_TAG = "<br>"
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 /**
  * Generates UtBot specific sections to include them to rendered JavaDoc comment.

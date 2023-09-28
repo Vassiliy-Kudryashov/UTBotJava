@@ -2,7 +2,7 @@ package org.utbot.testing
 
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.engine.EngineController
 import org.utbot.engine.Mocker
 import org.utbot.engine.UtBotSymbolicEngine
@@ -48,7 +48,7 @@ class TestSpecificTestCaseGenerator(
     applicationContext = applicationContext,
 ) {
 
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
 
     fun generate(
         method: ExecutableId,

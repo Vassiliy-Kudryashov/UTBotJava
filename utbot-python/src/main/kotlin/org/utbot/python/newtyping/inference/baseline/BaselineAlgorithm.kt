@@ -1,6 +1,6 @@
 package org.utbot.python.newtyping.inference.baseline
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.python.PythonMethod
 import org.utbot.python.newtyping.*
 import org.utbot.python.newtyping.ast.visitor.hints.*
@@ -21,7 +21,7 @@ private val EDGES_TO_LINK = listOf(
     EdgeSource.Comparison
 )
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class BaselineAlgorithm(
     private val storage: PythonTypeStorage,

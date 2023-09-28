@@ -52,7 +52,7 @@ task generatePomFile() {
     rootNode.with {
         appendNode('modelVersion', '4.0.0')
         appendNode('groupId', 'org.utbot')
-        appendNode('artifactId', 'utbot-maven')
+//        appendNode('artifactId', 'utbot-maven')
         appendNode('version', this.project.version)
         appendNode('packaging', 'maven-plugin')
 

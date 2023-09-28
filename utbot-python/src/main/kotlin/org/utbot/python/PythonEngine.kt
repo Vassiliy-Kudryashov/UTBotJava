@@ -2,7 +2,7 @@ package org.utbot.python
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.*
 import org.utbot.fuzzing.Control
 import org.utbot.fuzzing.NoSeedValueException
@@ -27,7 +27,7 @@ import org.utbot.summary.fuzzer.names.TestSuggestedInfo
 import java.net.ServerSocket
 import kotlin.random.Random
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class PythonEngine(
     private val methodUnderTest: PythonMethod,

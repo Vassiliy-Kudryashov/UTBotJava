@@ -6,7 +6,7 @@ import com.google.javascript.jscomp.SourceFile
 import com.google.javascript.rhino.Node
 import java.io.File
 import java.nio.file.Paths
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import parser.JsParserUtils.getAbstractFunctionName
 import parser.JsParserUtils.getClassMethods
 import parser.JsParserUtils.getImportSpecAliases
@@ -17,7 +17,7 @@ import parser.JsParserUtils.getRequireImportText
 import parser.JsParserUtils.isRequireImport
 import kotlin.io.path.pathString
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class JsAstScrapper(
     private val parsedFile: Node,

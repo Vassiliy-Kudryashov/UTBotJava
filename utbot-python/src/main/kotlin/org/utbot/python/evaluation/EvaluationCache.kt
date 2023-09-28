@@ -1,6 +1,6 @@
 package org.utbot.python.evaluation
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.python.framework.api.python.PythonTreeWrapper
 import org.utbot.python.fuzzing.PythonExecutionResult
 import org.utbot.python.fuzzing.PythonMethodDescription

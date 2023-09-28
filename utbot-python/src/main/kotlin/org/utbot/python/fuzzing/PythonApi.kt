@@ -1,6 +1,6 @@
 package org.utbot.python.fuzzing
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.Instruction
 import org.utbot.framework.plugin.api.UtError
 import org.utbot.fuzzer.FuzzedContext
@@ -14,7 +14,7 @@ import org.utbot.python.newtyping.*
 import org.utbot.python.newtyping.general.Type
 import kotlin.random.Random
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 data class PythonFuzzedConcreteValue(
     val type: Type,

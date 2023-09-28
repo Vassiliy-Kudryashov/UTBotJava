@@ -15,10 +15,10 @@ import com.intellij.openapi.startup.StartupActivity
 import com.intellij.openapi.wm.WindowManager
 import com.intellij.ui.GotItTooltip
 import javax.swing.event.HyperlinkEvent
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 
 abstract class Notifier {
-    protected val logger = KotlinLogging.logger {}
+    protected val logger =  UtLogging.logger {}
 
     protected abstract val notificationType: NotificationType
     protected abstract val displayId: String

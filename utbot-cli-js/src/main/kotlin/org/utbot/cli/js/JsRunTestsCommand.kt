@@ -6,12 +6,12 @@ import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.github.ajalt.clikt.parameters.types.choice
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.cli.js.JsUtils.makeAbsolutePath
 import utils.JsCmdExec
 import java.io.File
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class JsRunTestsCommand : CliktCommand(name = "run_js", help = "Runs tests for the specified file or directory.") {
 

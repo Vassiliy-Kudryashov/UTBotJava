@@ -1,6 +1,6 @@
 package org.utbot.maven.plugin
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.apache.maven.plugin.AbstractMojo
 import org.apache.maven.plugins.annotations.Execute
 import org.apache.maven.plugins.annotations.LifecyclePhase
@@ -21,7 +21,7 @@ import org.utbot.maven.plugin.wrappers.SourceFindingStrategyMaven
 import java.io.File
 import java.net.URLClassLoader
 
-internal val logger = KotlinLogging.logger {}
+internal val logger =  UtLogging.logger {}
 
 /**
  * The main class containing the entry point [execute].

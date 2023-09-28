@@ -1,6 +1,6 @@
 package org.utbot.python.newtyping.inference.baseline
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.python.newtyping.*
 import org.utbot.python.newtyping.ast.visitor.hints.HintCollectorResult
 import org.utbot.python.newtyping.general.DefaultSubstitutionProvider
@@ -9,7 +9,7 @@ import org.utbot.python.newtyping.general.getBoundedParameters
 import org.utbot.python.newtyping.general.getOrigin
 import org.utbot.python.newtyping.inference.collectBoundsFromEdges
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class TypeRating(scores: List<Pair<Type, Double>>) {
     val typesInOrder: List<Pair<Double, Type>> = scores.map { Pair(it.second, it.first) }.sortedBy { -it.first }

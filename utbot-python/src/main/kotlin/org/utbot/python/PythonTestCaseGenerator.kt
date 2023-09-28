@@ -1,7 +1,7 @@
 package org.utbot.python
 
 import kotlinx.coroutines.runBlocking
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.minimization.minimizeExecutions
 import org.utbot.framework.plugin.api.UtError
 import org.utbot.framework.plugin.api.UtExecution
@@ -30,7 +30,7 @@ import org.utbot.python.utils.PriorityCartesianProduct
 import org.utbot.python.utils.TimeoutMode
 import java.io.File
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 private const val RANDOM_TYPE_FREQUENCY = 6
 private const val MAX_EMPTY_COVERAGE_TESTS = 5
 private const val MAX_SUBSTITUTIONS = 10

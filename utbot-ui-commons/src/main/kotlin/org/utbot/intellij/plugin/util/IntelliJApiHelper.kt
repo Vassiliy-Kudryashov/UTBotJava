@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.util.PlatformUtils
 import com.intellij.util.ReflectionUtil
 import com.intellij.util.concurrency.AppExecutorUtil
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.CancellationStrategyType.*
 import org.utbot.framework.UtSettings
 
@@ -19,7 +19,7 @@ import org.utbot.framework.UtSettings
  * This object is required to encapsulate Android API usage and grant safe access to it.
  */
 object IntelliJApiHelper {
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
     enum class Target { THREAD_POOL, READ_ACTION, WRITE_ACTION, EDT_LATER }
 
     fun run(target: Target, indicator: ProgressIndicator? = null, logMessage : String, runnable: Runnable) {

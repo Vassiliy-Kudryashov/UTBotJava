@@ -1,6 +1,6 @@
 package org.utbot.python.evaluation
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import java.io.IOException
 import java.net.DatagramPacket
 import java.net.DatagramSocket
@@ -11,7 +11,7 @@ class PythonCoverageReceiver(
 ) : Thread() {
     val coverageStorage = mutableMapOf<String, MutableSet<Int>>()
     private val socket = DatagramSocket()
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
 
     fun address(): Pair<String, String> {
         return "localhost" to socket.localPort.toString()

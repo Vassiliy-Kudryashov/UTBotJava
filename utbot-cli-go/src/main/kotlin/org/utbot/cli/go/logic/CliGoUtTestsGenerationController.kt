@@ -1,6 +1,6 @@
 package org.utbot.cli.go.logic
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.cli.go.util.durationInMillis
 import org.utbot.cli.go.util.now
 import org.utbot.go.api.GoUtFile
@@ -12,7 +12,7 @@ import java.io.File
 import java.nio.file.Path
 import java.time.LocalDateTime
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class CliGoUtTestsGenerationController(
     private val printToStdOut: Boolean,

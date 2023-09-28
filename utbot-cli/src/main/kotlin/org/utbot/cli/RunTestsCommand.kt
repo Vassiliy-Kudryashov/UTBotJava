@@ -23,10 +23,10 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class RunTestsCommand : CliktCommand(name = "run", help = "Runs tests for the specified class") {
     private val classWithTestsName by argument(

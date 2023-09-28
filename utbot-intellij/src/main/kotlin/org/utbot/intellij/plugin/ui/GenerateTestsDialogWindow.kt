@@ -73,7 +73,7 @@ import com.intellij.util.ui.JBUI.scale
 import com.intellij.util.ui.JBUI.size
 import com.intellij.util.ui.UIUtil
 import com.intellij.util.ui.components.BorderLayoutPanel
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.concurrency.Promise
 import org.jetbrains.concurrency.thenRun
 import org.utbot.common.PathUtil.toPath
@@ -177,7 +177,7 @@ class GenerateTestsDialogWindow(val model: GenerateTestsModel) : DialogWrapper(m
         const val maxSupportedSdkVersion = 17
     }
 
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
 
     private val membersTable = MemberSelectionTable(emptyList(), null)
 

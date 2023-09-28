@@ -6,14 +6,14 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.required
 import com.github.ajalt.clikt.parameters.options.split
 import com.github.ajalt.clikt.parameters.types.long
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.python.newtyping.inference.TypeInferenceProcessor
 import org.utbot.python.newtyping.pythonTypeRepresentation
 import org.utbot.python.utils.Fail
 import org.utbot.python.utils.RequirementsUtils.requirements
 import org.utbot.python.utils.Success
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class PythonTypeInferenceCommand : CliktCommand(
     name = "infer_types",

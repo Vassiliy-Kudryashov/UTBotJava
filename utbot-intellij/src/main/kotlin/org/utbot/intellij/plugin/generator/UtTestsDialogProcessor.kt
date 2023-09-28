@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit
 import java.util.stream.Collectors
 import kotlin.io.path.exists
 import kotlin.io.path.pathString
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.concurrency.Promise
 import org.jetbrains.concurrency.all
 import org.jetbrains.idea.maven.project.MavenProjectsManager
@@ -79,7 +79,7 @@ import org.utbot.intellij.plugin.util.extractClassMethodsIncludingNested
 import org.utbot.rd.terminateOnException
 
 object UtTestsDialogProcessor {
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
 
     enum class ProgressRange(val from : Double, val to: Double) {
         SOLVING(from = 0.0, to = 0.9),

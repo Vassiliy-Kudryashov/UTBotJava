@@ -1,6 +1,6 @@
 package org.utbot.gradle.plugin
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginConvention
@@ -10,7 +10,7 @@ import org.utbot.gradle.plugin.extension.SarifGradleExtension
 import org.utbot.gradle.plugin.extension.SarifGradleExtensionProvider
 import java.io.File
 
-internal val logger = KotlinLogging.logger {}
+internal val logger =  UtLogging.logger {}
 
 /**
  * The main class containing the entry point [apply].

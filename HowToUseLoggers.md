@@ -59,12 +59,12 @@ Sometimes it is handy to add an extra logger to a Kotlin class in order to log d
 
 The primary logger is usually defined as 
 
-`private val logger = KotlinLogging.logger {} `
+`private val logger =  UtLogging.logger {} `
 
 
 You may add an extra logger 
 
-`private val timeoutLogger = KotlinLogging.logger(logger.name + ".timeout") `
+`private val timeoutLogger =  UtLogging.logger(logger.name + ".timeout") `
 
 
 Having this logger, you can use it in code with different log levels in parallel with the primary logger.

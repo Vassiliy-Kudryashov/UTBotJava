@@ -23,7 +23,7 @@ import java.io.File
 import java.util.concurrent.CancellationException
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.runBlockingWithCancellationPredicate
 import org.utbot.framework.codegen.domain.models.CgMethodTestSet
 import org.utbot.framework.plugin.api.EnvironmentModels
@@ -66,7 +66,7 @@ import utils.constructClass
 import utils.data.ResultData
 import utils.toJsAny
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class JsTestGenerator(
     private val fileText: String,

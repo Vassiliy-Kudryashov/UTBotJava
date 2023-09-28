@@ -1,6 +1,6 @@
 package org.utbot.python.evaluation
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.Coverage
 import org.utbot.framework.plugin.api.Instruction
 import org.utbot.python.FunctionArguments
@@ -22,7 +22,7 @@ import org.utbot.python.newtyping.utils.isNamed
 import org.utbot.python.newtyping.utils.isRequired
 import java.net.SocketException
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class PythonCodeSocketExecutor(
     override val method: PythonMethod,

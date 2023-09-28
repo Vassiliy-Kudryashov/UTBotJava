@@ -4,7 +4,7 @@ import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.clikt.parameters.types.long
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.cli.go.logic.CliGoUtTestsGenerationController
 import org.utbot.cli.go.util.durationInMillis
 import org.utbot.cli.go.util.now
@@ -14,7 +14,7 @@ import org.utbot.go.logic.TestsGenerationMode
 import java.nio.file.Files
 import java.nio.file.Paths
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class GenerateGoTestsCommand :
     CliktCommand(name = "generateGo", help = "Generates tests for the specified Go source file") {

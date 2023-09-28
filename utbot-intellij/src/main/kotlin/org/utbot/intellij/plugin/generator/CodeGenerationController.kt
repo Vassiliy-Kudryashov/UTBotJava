@@ -43,7 +43,7 @@ import com.intellij.psi.codeStyle.JavaCodeStyleManager.DO_NOT_ADD_IMPORTS
 import com.intellij.psi.search.GlobalSearchScopesCore
 import com.intellij.testIntegration.TestIntegrationUtils
 import com.siyeh.ig.psiutils.ImportUtils
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.kotlin.asJava.classes.KtUltraLightClass
 import org.jetbrains.kotlin.idea.KotlinFileType
 import org.jetbrains.kotlin.idea.core.ShortenReferences
@@ -103,7 +103,7 @@ import org.utbot.intellij.plugin.util.showSettingsEditor
 import org.utbot.sarif.*
 
 object CodeGenerationController {
-    private val logger = KotlinLogging.logger {}
+    private val logger =  UtLogging.logger {}
 
     private class UtilClassListener {
         var requiredUtilClassKind: UtilClassKind? = null

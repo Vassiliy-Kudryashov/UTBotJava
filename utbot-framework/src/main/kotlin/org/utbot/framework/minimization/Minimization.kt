@@ -8,7 +8,7 @@ import org.utbot.framework.plugin.api.UtExecutionResult
 import org.utbot.framework.plugin.api.UtSymbolicExecution
 import org.utbot.framework.util.calculateSize
 import org.utbot.fuzzer.UtFuzzedExecution
-import org.utbot.instrumentation.instrumentation.execution.constructors.UtModelConstructor
+//import org.utbot.instrumentation.instrumentation.execution.constructors.UtModelConstructor
 
 
 /**

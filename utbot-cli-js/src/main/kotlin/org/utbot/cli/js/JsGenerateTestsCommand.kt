@@ -4,7 +4,7 @@ import api.JsTestGenerator
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.cli.js.JsUtils.makeAbsolutePath
 import service.coverage.CoverageMode
 import settings.JsDynamicSettings
@@ -17,7 +17,7 @@ import java.nio.file.Paths
 import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 
 class JsGenerateTestsCommand :

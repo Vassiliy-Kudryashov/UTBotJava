@@ -2,7 +2,7 @@ package org.utbot.spring.process
 
 import com.jetbrains.rd.util.lifetime.LifetimeDefinition
 import kotlinx.coroutines.runBlocking
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.JarUtils
 import org.utbot.common.getPid
 import org.utbot.framework.UtSettings
@@ -31,7 +31,7 @@ class SpringAnalyzerProcessInstantDeathException :
         UtSettings.runSpringAnalyzerProcessWithDebug
     )
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 private var classpathArgs = listOf<String>()
 

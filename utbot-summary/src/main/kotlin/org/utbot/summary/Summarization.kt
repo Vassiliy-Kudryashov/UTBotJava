@@ -5,7 +5,6 @@ import org.utbot.framework.plugin.api.UtClusterInfo
 import org.utbot.framework.plugin.api.UtSymbolicExecution
 import org.utbot.framework.plugin.api.UtExecutionCluster
 import org.utbot.framework.plugin.api.UtMethodTestSet
-import org.utbot.instrumentation.instrumentation.instrumenter.Instrumenter
 import org.utbot.summary.SummarySentenceConstants.NEW_LINE
 import org.utbot.summary.analysis.ExecutionStructureAnalysis
 import org.utbot.summary.ast.JimpleToASTMap
@@ -15,7 +14,7 @@ import org.utbot.summary.comment.classic.symbolic.SimpleCommentBuilder
 import org.utbot.summary.name.SimpleNameBuilder
 import java.io.File
 import java.nio.file.Path
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.measureTime
 import org.utbot.common.info
 import org.utbot.framework.SummariesGenerationType.*
@@ -36,7 +35,7 @@ import org.utbot.summary.fuzzer.names.ModelBasedNameSuggester
 import org.utbot.summary.comment.customtags.symbolic.CustomJavaDocCommentBuilder
 import soot.SootMethod
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 fun Collection<UtMethodTestSet>.summarizeAll(searchDirectory: Path, sourceFile: File?): List<UtMethodTestSet> = logger.info().measureTime({
     "----------------------------------------------------------------------------------------\n" +
@@ -53,7 +52,7 @@ private fun UtMethodTestSet.summarizeOne(searchDirectory: Path, sourceFile: File
 
     val sourceFileToAnalyze = sourceFile
         ?: when (summaryGenerationType) {
-            FULL -> Instrumenter.adapter.computeSourceFileByClass(this.method.classId.jClass, searchDirectory)
+            FULL ,//-> Instrumenter.adapter.computeSourceFileByClass(this.method.classId.jClass, searchDirectory)
             LIGHT,
             NONE -> null
         }
@@ -407,11 +406,11 @@ private fun invokeDescriptions(testSet: UtMethodTestSet, searchDirectory: Path):
         //TODO(SAT-1170)
         .filterNot { "\$lambda" in it.declaringClass.name }
         .mapNotNull { sootMethod ->
-            val methodFile = Instrumenter.adapter.computeSourceFileByNameAndPackage(
+            val methodFile = null as File/*Instrumenter.adapter.computeSourceFileByNameAndPackage(
                 sootMethod.declaringClass.name,
                 sootMethod.declaringClass.javaPackageName.replace(".", File.separator),
                 searchDirectory
-            )
+            )*/
 
             if (methodFile != null && methodFile.exists()) {
                 val ast = methodFile.let {

@@ -7,13 +7,11 @@ dependencies {
     api project(':utbot-summary')
 
     implementation(project(":utbot-framework"))
-    testImplementation project(':utbot-sample')
+//    testImplementation project(':utbot-sample')
     testImplementation project(":utbot-framework").sourceSets.test.output
     testImplementation project(":utbot-core").sourceSets.test.output
 
-    implementation("org.unittestbot.soot:soot-utbot-fork:${sootVersion}") {
-        exclude group:'com.google.guava', module:'guava'
-    }
+    implementation("org.soot-oss:soot:${sootVersion}")
 
     implementation group: 'com.charleskorn.kaml', name: 'kaml', version: kamlVersion
     implementation group: 'com.fasterxml.jackson.module', name: 'jackson-module-kotlin', version: jacksonVersion
@@ -42,8 +40,8 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-inline', version: mockitoInlineVersion
     testImplementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: log4j2Version
 
-    implementation group: 'com.github.UnitTestBot.ksmt', name: 'ksmt-core', version: ksmtVersion
-    implementation group: 'com.github.UnitTestBot.ksmt', name: 'ksmt-z3', version: ksmtVersion
+    runtimeOnly group: 'com.github.UnitTestBot.ksmt', name: 'ksmt-core', version: ksmtVersion
+    runtimeOnly group: 'com.github.UnitTestBot.ksmt', name: 'ksmt-z3', version: ksmtVersion
 }
 
 // This is required to avoid conflict between SpringBoot standard logger and the logger of our project.

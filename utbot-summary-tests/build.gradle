@@ -8,7 +8,7 @@ compileTestJava.dependsOn tasks.getByPath(':utbot-framework:testClasses')
 dependencies {
     implementation(project(":utbot-framework"))
     implementation(project(':utbot-instrumentation'))
-    testImplementation project(':utbot-sample')
+//    testImplementation project(':utbot-sample')
     testImplementation group: 'junit', name: 'junit', version: junit4Version
     testImplementation project(':utbot-testing')
     testImplementation project(':utbot-framework').sourceSets.test.output

@@ -4,7 +4,7 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.default
 import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.types.choice
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.cli.util.createClassLoader
 import org.utbot.engine.Mocker
 import org.utbot.framework.plugin.api.ClassId
@@ -17,7 +17,7 @@ import java.nio.file.Paths
 import java.time.temporal.ChronoUnit
 
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class BunchTestGeneratorCommand : GenerateTestsAbstractCommand(
     name = "bunchGenerate",
@@ -101,15 +101,15 @@ class BunchTestGeneratorCommand : GenerateTestsAbstractCommand(
 
                 val testClassName = "${classIdUnderTest.simpleName}Test"
 
-                val testSets = generateTestSets(
-                    testCaseGenerator,
-                    targetMethods,
-                    searchDirectory = workingDirectory,
-                    chosenClassesToMockAlways = (Mocker.defaultSuperClassesToMockAlwaysNames + classesToMockAlways)
-                        .mapTo(mutableSetOf()) { ClassId(it) }
-                )
+//                val testSets = generateTestSets(
+//                    testCaseGenerator,
+//                    targetMethods,
+//                    searchDirectory = workingDirectory,
+//                    chosenClassesToMockAlways = (Mocker.defaultSuperClassesToMockAlwaysNames + classesToMockAlways)
+//                        .mapTo(mutableSetOf()) { ClassId(it) }
+//                )
 
-                val testClassBody = generateTest(classIdUnderTest, testClassName, testSets)
+//                val testClassBody = generateTest(classIdUnderTest, testClassName, testSets)
 
                 val outputArgAsFile = File(output ?: "")
                 if (!outputArgAsFile.exists()) {
@@ -122,7 +122,7 @@ class BunchTestGeneratorCommand : GenerateTestsAbstractCommand(
                 val path = Paths.get("${outputDir}${packageNameAsList.joinToString(separator = File.separator)}")
                 path.toFile().mkdirs()
 
-                saveToFile(testClassBody, "$path${File.separator}${testClassName}.java")
+//                saveToFile(testClassBody, "$path${File.separator}${testClassName}.java")
             }
         } catch (t: Throwable) {
             logger.error { "An error has occurred while generating test for snippet $targetClassFqn : $t" }

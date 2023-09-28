@@ -1,9 +1,9 @@
 package org.utbot.python.newtyping
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.python.newtyping.general.*
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class PythonTypeWrapperForEqualityCheck(
     val type: Type,

@@ -1,6 +1,6 @@
 package org.utbot.fuzzer
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.classId
 import org.utbot.framework.plugin.api.util.*
 import org.utbot.framework.util.executableId
@@ -23,7 +23,7 @@ import soot.jimple.NullConstant
 import soot.jimple.internal.*
 import soot.toolkits.graph.ExceptionalUnitGraph
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 /**
  * Finds constant values in method body.

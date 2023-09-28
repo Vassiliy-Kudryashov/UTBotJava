@@ -18,7 +18,7 @@ import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFileFactory
 import com.intellij.psi.impl.file.PsiDirectoryFactory
 import com.intellij.util.concurrency.AppExecutorUtil
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.kotlin.idea.util.application.invokeLater
 import org.jetbrains.kotlin.idea.util.application.runReadAction
 import org.jetbrains.kotlin.idea.util.application.runWriteAction
@@ -36,7 +36,7 @@ import utils.JsCmdExec
 import utils.OsProvider
 import java.io.IOException
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 object JsDialogProcessor {
 

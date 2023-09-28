@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.ThreadBasedExecutor
 import org.utbot.common.measureTime
 import org.utbot.common.info
@@ -19,7 +19,7 @@ import org.utbot.framework.plugin.services.JdkInfoService
 import org.utbot.instrumentation.ConcreteExecutor
 
 private val javaHome = System.getenv("JAVA_HOME")
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 fun main(args: Array<String>) {
     val outputFile = args.getOrNull(0)?.let { File(it) }

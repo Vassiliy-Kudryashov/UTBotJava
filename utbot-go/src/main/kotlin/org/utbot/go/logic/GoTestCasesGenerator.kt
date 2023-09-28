@@ -2,7 +2,7 @@ package org.utbot.go.logic
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.catch
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.isWindows
 import org.utbot.framework.plugin.api.TimeoutException
 import org.utbot.go.CoveredLines
@@ -21,7 +21,7 @@ import java.net.ServerSocket
 import java.nio.file.Path
 import kotlin.system.measureTimeMillis
 
-val logger = KotlinLogging.logger {}
+val logger =  UtLogging.logger {}
 
 object GoTestCasesGenerator {
 

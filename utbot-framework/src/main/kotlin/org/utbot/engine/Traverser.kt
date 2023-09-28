@@ -7,7 +7,7 @@ import kotlinx.collections.immutable.persistentSetOf
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.collections.immutable.toPersistentMap
 import kotlinx.collections.immutable.toPersistentSet
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.ArtificialError
 import org.utbot.framework.plugin.api.OverflowDetectionError
 import org.utbot.framework.plugin.api.TaintAnalysisError
@@ -231,7 +231,7 @@ import java.lang.reflect.TypeVariable
 import java.lang.reflect.WildcardType
 
 private val CAUGHT_EXCEPTION = LocalVariable("@caughtexception")
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class Traverser(
     private val methodUnderTest: ExecutableId,

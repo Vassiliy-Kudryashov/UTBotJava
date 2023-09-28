@@ -5,7 +5,7 @@ import com.github.ajalt.clikt.parameters.arguments.argument
 import com.github.ajalt.clikt.parameters.options.*
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.long
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.parsers.python.PythonParser
 import org.utbot.framework.codegen.domain.RuntimeExceptionTestsBehaviour
 import org.utbot.framework.codegen.domain.TestFramework
@@ -29,7 +29,7 @@ import java.nio.file.Paths
 private const val DEFAULT_TIMEOUT_IN_MILLIS = 60000L
 private const val DEFAULT_TIMEOUT_FOR_ONE_RUN_IN_MILLIS = 2000L
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class PythonGenerateTestsCommand : CliktCommand(
     name = "generate_python",

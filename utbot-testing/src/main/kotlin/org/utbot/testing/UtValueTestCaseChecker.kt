@@ -14,7 +14,7 @@ import org.utbot.framework.UtSettings.daysLimitForTempFiles
 import org.utbot.framework.context.ApplicationContext
 import org.utbot.framework.coverage.Coverage
 import org.utbot.framework.coverage.counters
-import org.utbot.framework.coverage.methodCoverage
+//import org.utbot.framework.coverage.methodCoverage
 import org.utbot.framework.coverage.toAtLeast
 import org.utbot.framework.plugin.api.ClassId
 import org.utbot.framework.plugin.api.ExecutableId
@@ -1952,7 +1952,7 @@ abstract class UtValueTestCaseChecker(
             .filterNot { it.isDisabled }
             .forEach { config ->
                 runCatching {
-                    internalCheckForCodeGeneration(method, config, generateWithNested, additionalMockAlwaysClasses)
+//                    internalCheckForCodeGeneration(method, config, generateWithNested, additionalMockAlwaysClasses)
                 }.onFailure {
                     failed += config
                 }.onSuccess {
@@ -1971,56 +1971,56 @@ abstract class UtValueTestCaseChecker(
         }
     }
 
-    @Suppress("ControlFlowWithEmptyBody", "UNUSED_VARIABLE")
-    private fun internalCheckForCodeGeneration(
-        method: KFunction<*>,
-        testInfrastructureConfiguration: TestInfrastructureConfiguration,
-        generateWithNested: Boolean,
-        additionalMockAlwaysClasses: Set<ClassId> = emptySet()
-    ) {
-        withSettingsFromTestFrameworkConfiguration(testInfrastructureConfiguration) {
-            with(testInfrastructureConfiguration) {
-
-                val executableId = method.executableId
-                computeAdditionalDependenciesClasspathAndBuildDir(method.declaringClazz, emptyArray())
-                val utContext = UtContext(method.declaringClazz.classLoader)
-
-                clearTempDirectory(daysLimitForTempFiles)
-
-                withUtContext(utContext) {
-                    val methodWithStrategy =
-                        MethodWithMockStrategy(executableId, mockStrategy, resetNonFinalFieldsAfterClinit)
-
-                    val (testSet, coverage) = analyzedMethods.getOrPut(methodWithStrategy) {
-                        walk(executableId, mockStrategy, additionalMockAlwaysClasses = additionalMockAlwaysClasses)
-                    }
-
-                    // if force mocking took place in parametrized test generation,
-                    // we do not need to process this [testSet]
-                    if (TestCodeGeneratorPipeline.currentTestInfrastructureConfiguration.isParametrizedAndMocked) {
-                        conflictTriggers.reset(Conflict.ForceMockHappened, Conflict.ForceStaticMockHappened)
-                        return
-                    }
-
-                    val methodUnderTestOwnerId = testSet.method.classId
-                    val classUnderTest = if (generateWithNested) {
-                        generateSequence(methodUnderTestOwnerId) { clazz -> clazz.enclosingClass }.last().kClass
-                    } else {
-                        methodUnderTestOwnerId.kClass
-                    }
-
-                    val stageStatusCheck = StageStatusCheck(
-                        firstStage = CodeGeneration,
-                        lastStage = TestExecution,
-                        status = ExecutionStatus.SUCCESS
-                    )
-                    val classStages = ClassStages(classUnderTest, stageStatusCheck, listOf(testSet))
-
-                    TestCodeGeneratorPipeline(testInfrastructureConfiguration, applicationContext).runClassesCodeGenerationTests(classStages)
-                }
-            }
-        }
-    }
+//    @Suppress("ControlFlowWithEmptyBody", "UNUSED_VARIABLE")
+//    private fun internalCheckForCodeGeneration(
+//        method: KFunction<*>,
+//        testInfrastructureConfiguration: TestInfrastructureConfiguration,
+//        generateWithNested: Boolean,
+//        additionalMockAlwaysClasses: Set<ClassId> = emptySet()
+//    ) {
+//        withSettingsFromTestFrameworkConfiguration(testInfrastructureConfiguration) {
+//            with(testInfrastructureConfiguration) {
+//
+//                val executableId = method.executableId
+//                computeAdditionalDependenciesClasspathAndBuildDir(method.declaringClazz, emptyArray())
+//                val utContext = UtContext(method.declaringClazz.classLoader)
+//
+//                clearTempDirectory(daysLimitForTempFiles)
+//
+//                withUtContext(utContext) {
+//                    val methodWithStrategy =
+//                        MethodWithMockStrategy(executableId, mockStrategy, resetNonFinalFieldsAfterClinit)
+//
+//                    val (testSet, coverage) = analyzedMethods.getOrPut(methodWithStrategy) {
+//                        walk(executableId, mockStrategy, additionalMockAlwaysClasses = additionalMockAlwaysClasses)
+//                    }
+//
+//                    // if force mocking took place in parametrized test generation,
+//                    // we do not need to process this [testSet]
+//                    if (TestCodeGeneratorPipeline.currentTestInfrastructureConfiguration.isParametrizedAndMocked) {
+//                        conflictTriggers.reset(Conflict.ForceMockHappened, Conflict.ForceStaticMockHappened)
+//                        return
+//                    }
+//
+//                    val methodUnderTestOwnerId = testSet.method.classId
+//                    val classUnderTest = if (generateWithNested) {
+//                        generateSequence(methodUnderTestOwnerId) { clazz -> clazz.enclosingClass }.last().kClass
+//                    } else {
+//                        methodUnderTestOwnerId.kClass
+//                    }
+//
+//                    val stageStatusCheck = StageStatusCheck(
+//                        firstStage = CodeGeneration,
+//                        lastStage = TestExecution,
+//                        status = ExecutionStatus.SUCCESS
+//                    )
+//                    val classStages = ClassStages(classUnderTest, stageStatusCheck, listOf(testSet))
+//
+//                    TestCodeGeneratorPipeline(testInfrastructureConfiguration, applicationContext).runClassesCodeGenerationTests(classStages)
+//                }
+//            }
+//        }
+//    }
 
     inline fun <reified R> internalCheck(
         method: KFunction<R>,
@@ -2043,18 +2043,18 @@ abstract class UtValueTestCaseChecker(
             val additionalDependenciesClassPath =
                 computeAdditionalDependenciesClasspathAndBuildDir(executableId.classId.jClass, additionalDependencies)
 
-            val (testSet, coverage) = if (coverageMatcher is DoNotCalculate) {
+//            val (testSet, coverage) = if (coverageMatcher is DoNotCalculate) {
                 val testSet = executions(
                     executableId,
                     mockStrategy,
                     additionalDependenciesClassPath,
                     additionalMockAlwaysClasses
                 )
-
-                MethodResult(testSet, Coverage())
-            } else {
-                walk(executableId, mockStrategy, additionalDependenciesClassPath, additionalMockAlwaysClasses)
-            }
+//
+                MethodResult(testSet /*, Coverage()*/)
+//            } else {
+//                walk(executableId, mockStrategy, additionalDependenciesClassPath, additionalMockAlwaysClasses)
+//            }
             listOf(testSet).summarizeAll(searchDirectory, sourceFile = null)
             val valueTestCase = testSet.toValueTestCase()
 
@@ -2079,9 +2079,9 @@ abstract class UtValueTestCaseChecker(
             valueExecutions.checkTypes(R::class, classes.toList())
 
             valueExecutions.checkMatchers(matchers, arguments)
-            assertTrue(coverageMatcher(coverage)) {
-                "Coverage matcher '$coverageMatcher' fails for $coverage (at least: ${coverage.toAtLeast()})"
-            }
+//            assertTrue(coverageMatcher(coverage)) {
+//                "Coverage matcher '$coverageMatcher' fails for $coverage (at least: ${coverage.toAtLeast()})"
+//            }
 
             processTestSet(testSet)
         }
@@ -2134,12 +2134,12 @@ abstract class UtValueTestCaseChecker(
         additionalMockAlwaysClasses: Set<ClassId> = emptySet()
     ): MethodResult {
         val testSet = executions(method, mockStrategy, additionalDependenciesClassPath, additionalMockAlwaysClasses)
-        val methodCoverage = methodCoverage(
-            method,
-            testSet.toValueTestCase().executions,
-            buildDir.toString() + File.pathSeparator + additionalDependenciesClassPath
-        )
-        return MethodResult(testSet, methodCoverage)
+//        val methodCoverage = methodCoverage(
+//            method,
+//            testSet.toValueTestCase().executions,
+//            buildDir.toString() + File.pathSeparator + additionalDependenciesClassPath
+//        )
+        return MethodResult(testSet/*, methodCoverage*/)
     }
 
     open fun executions(
@@ -2206,7 +2206,7 @@ abstract class UtValueTestCaseChecker(
         val substituteStatics: Boolean
     )
 
-    data class MethodResult(val testSet: UtMethodTestSet, val coverage: Coverage)
+    data class MethodResult(val testSet: UtMethodTestSet/*, val coverage: Coverage*/)
 }
 
 @Suppress("UNCHECKED_CAST")

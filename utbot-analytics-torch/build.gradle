@@ -11,7 +11,7 @@ compileTestJava.dependsOn tasks.getByPath(':utbot-framework:testClasses')
 
 dependencies {
     api project(':utbot-analytics')
-    testImplementation project(':utbot-sample')
+//    testImplementation project(':utbot-sample')
     testImplementation group: 'junit', name: 'junit', version: junit4Version
 
     implementation group: 'org.bytedeco', name: 'javacpp', version: javaCppVersion, classifier: "$classifier"

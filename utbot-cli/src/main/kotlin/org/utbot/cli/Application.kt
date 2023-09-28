@@ -8,12 +8,12 @@ import com.github.ajalt.clikt.parameters.options.versionOption
 import com.github.ajalt.clikt.parameters.types.enum
 import java.util.Properties
 import kotlin.system.exitProcess
-import mu.KotlinLogging
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.core.config.Configurator
 import org.slf4j.event.Level
+import org.utbot.framework.UtLogging
 
-private val logger = KotlinLogging.logger {}
+private val logger = UtLogging.logger {}
 
 class UtBotCli : CliktCommand(name = "UnitTestBot Java Command Line Interface") {
     private val verbosity by option("--verbosity", help = "Changes verbosity level, case insensitive")
@@ -28,7 +28,7 @@ class UtBotCli : CliktCommand(name = "UnitTestBot Java Command Line Interface") 
 }
 
 fun main(args: Array<String>) = try {
-    UtBotCli().subcommands(GenerateTestsCommand(), BunchTestGeneratorCommand(), RunTestsCommand()).main(args)
+//    UtBotCli().subcommands(GenerateTestsCommand(), BunchTestGeneratorCommand(), RunTestsCommand()).main(args)
 } catch (ex: Throwable) {
     ex.printStackTrace()
     exitProcess(1)

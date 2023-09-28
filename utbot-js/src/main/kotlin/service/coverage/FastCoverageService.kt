@@ -1,7 +1,7 @@
 package service.coverage
 
 import java.io.File
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.json.JSONObject
 import service.ServiceContext
 import settings.JsTestGenerationSettings.fuzzingThreshold
@@ -9,7 +9,7 @@ import settings.JsTestGenerationSettings.tempFileName
 import utils.JsCmdExec
 import utils.data.ResultData
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class FastCoverageService(
     context: ServiceContext,

@@ -62,10 +62,10 @@ dependencies {
     implementation("org.mockito:mockito-core:$mockitoVersion")
     implementation("org.mockito:mockito-inline:$mockitoInlineVersion")
 
-    implementation(project(":utbot-spring-commons-api"))
-    if (projectType == springEdition || projectType == ultimateEdition) {
-        fetchSpringCommonsJar(project(":utbot-spring-commons", configuration = "springCommonsJar"))
-    }
+//    implementation(project(":utbot-spring-commons-api"))
+//    if (projectType == springEdition || projectType == ultimateEdition) {
+//        fetchSpringCommonsJar(project(":utbot-spring-commons", configuration = "springCommonsJar"))
+//    }
 }
 
 /**

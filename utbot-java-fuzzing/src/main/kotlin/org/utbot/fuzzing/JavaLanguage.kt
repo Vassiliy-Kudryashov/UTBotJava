@@ -1,6 +1,6 @@
 package org.utbot.fuzzing
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.ClassId
 import org.utbot.framework.plugin.api.ExecutableId
 import org.utbot.framework.plugin.api.Instruction
@@ -13,7 +13,7 @@ import java.util.concurrent.CancellationException
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 typealias JavaValueProvider = ValueProvider<FuzzedType, FuzzedValue, FuzzedDescription>
 

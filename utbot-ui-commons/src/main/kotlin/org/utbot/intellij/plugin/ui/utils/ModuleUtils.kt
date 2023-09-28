@@ -23,14 +23,14 @@ import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.openapi.vfs.newvfs.impl.FakeVirtualFile
 import com.intellij.util.PathUtil.getParentPath
 import java.nio.file.Path
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.jps.model.java.JavaResourceRootType
 import org.jetbrains.jps.model.module.JpsModuleSourceRootType
 import org.jetbrains.kotlin.config.KotlinFacetSettingsProvider
 import org.jetbrains.kotlin.config.TestResourceKotlinRootType
 import org.jetbrains.kotlin.platform.TargetPlatformVersion
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 interface ITestSourceRoot {
     val dirPath: String

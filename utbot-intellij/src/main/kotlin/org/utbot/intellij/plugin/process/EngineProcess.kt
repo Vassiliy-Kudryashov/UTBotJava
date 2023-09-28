@@ -12,7 +12,7 @@ import com.intellij.refactoring.util.classMembers.MemberInfo
 import com.jetbrains.rd.util.ConcurrentHashMap
 import com.jetbrains.rd.util.lifetime.LifetimeDefinition
 import kotlinx.coroutines.runBlocking
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.SpringSettings.*
 import org.utbot.common.*
 import org.utbot.framework.UtSettings
@@ -52,7 +52,7 @@ import kotlin.reflect.KProperty1
 import kotlin.reflect.full.memberProperties
 
 private val engineProcessLogConfigurationsDirectory = utBotTempDirectory.toFile().resolve("rdEngineProcessLogConfigurations").also { it.mkdirs() }
-private val logger = KotlinLogging.logger {}.also { overrideDefaultRdLoggerFactoryWithKLogger(it) }
+private val logger =  UtLogging.logger {}.also { overrideDefaultRdLoggerFactoryWithKLogger(it) }
 private val engineProcessLogDirectory = utBotTempDirectory.toFile().resolve("rdEngineProcessLogs").also { it.mkdirs() }
 
 private const val configurationFileDeleteKey = "delete_this_comment_key"
@@ -102,7 +102,7 @@ class EngineProcess private constructor(val project: Project, private val classN
         debugPort = UtSettings.engineProcessDebugPort,
         runWithDebug = UtSettings.runEngineProcessWithDebug,
         suspendExecutionInDebugMode = UtSettings.suspendEngineProcessExecutionInDebugMode,
-        processSpecificCommandLineArgs = { listOf("-ea", log4j2ConfigSwitch, "-cp", pluginClasspath, startFileName) }
+        processSpecificCommandLineArgs = { listOf("-ea", log4j2ConfigSwitch, "-Djava.library.path=/tmp_ru/libstdc++.so.6", "-Djna.library.path=/tmp_ru/libstdc++.so.6", "-cp", pluginClasspath, startFileName) }
     ) {
         fun createBlocking(project: Project, classNameToPath: Map<String, String?>): EngineProcess = runBlocking { EngineProcess(project, classNameToPath) }
 

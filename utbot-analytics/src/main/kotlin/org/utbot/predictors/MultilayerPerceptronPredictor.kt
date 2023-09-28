@@ -1,6 +1,6 @@
 package org.utbot.predictors
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.analytics.MLPredictor
 import org.utbot.framework.PathSelectorType
 import org.utbot.framework.UtSettings
@@ -9,7 +9,7 @@ import smile.math.matrix.Matrix
 
 private const val DEFAULT_MODEL_PATH = "nn.json"
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 private fun getModel(path: String) = buildModel(loadModel(path))
 

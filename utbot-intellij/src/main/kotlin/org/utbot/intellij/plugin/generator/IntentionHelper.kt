@@ -14,10 +14,10 @@ import com.intellij.openapi.util.Disposer
 import com.intellij.openapi.util.TextRange
 import com.intellij.psi.PsiFile
 import com.intellij.psi.SmartPsiElementPointer
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.jetbrains.kotlin.idea.util.application.runReadAction
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 // The required part of IntelliJ API was changed to com.intellij.codeInsight.daemon.impl.MainPassesRunner that is available since 2022.1 only
 class IntentionHelper(val project: Project, private val editor: Editor, private val testFile: SmartPsiElementPointer<PsiFile>) {
     fun applyIntentions() {

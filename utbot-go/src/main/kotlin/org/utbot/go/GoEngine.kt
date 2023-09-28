@@ -4,7 +4,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.channelFlow
 import kotlinx.coroutines.launch
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.fuzzing.BaseFeedback
 import org.utbot.fuzzing.Control
 import org.utbot.fuzzing.utils.Trie
@@ -18,7 +18,7 @@ import java.net.SocketTimeoutException
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicInteger
 
-val logger = KotlinLogging.logger {}
+val logger =  UtLogging.logger {}
 
 class GoEngine(
     private var workers: List<GoWorker>,

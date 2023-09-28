@@ -1,6 +1,6 @@
 package org.utbot.python.evaluation
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.TimeoutException
 import org.utbot.python.FunctionArguments
 import org.utbot.python.utils.TemporaryFileManager
@@ -11,7 +11,7 @@ import java.net.ServerSocket
 import java.net.Socket
 import java.net.SocketTimeoutException
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 class PythonWorkerManager(
     private val serverSocket: ServerSocket,

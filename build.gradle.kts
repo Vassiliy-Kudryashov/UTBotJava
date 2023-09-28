@@ -188,7 +188,7 @@ configure(
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/Vassiliy-Kudryashov/UTBotJava")
+                url = uri("https://maven.pkg.github.com/Markoutte/UTBotJava")
                 credentials {
                     username = System.getenv("GITHUB_ACTOR")
                     password = System.getenv("GITHUB_TOKEN")

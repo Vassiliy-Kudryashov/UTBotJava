@@ -1,8 +1,8 @@
 package org.utbot.predictors
 
 import org.utbot.analytics.MLPredictor
-import mu.KotlinLogging
 import org.utbot.framework.PathSelectorType
+import org.utbot.framework.UtLogging
 import org.utbot.framework.UtSettings
 import org.utbot.predictors.util.PredictorLoadingException
 import org.utbot.predictors.util.WeightsLoadingException
@@ -13,7 +13,7 @@ import java.io.File
 
 private const val DEFAULT_WEIGHT_PATH = "linear.txt"
 
-private val logger = KotlinLogging.logger {}
+private val logger = UtLogging.logger {}
 
 /**
  * Last weight is bias

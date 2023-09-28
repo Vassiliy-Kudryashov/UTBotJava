@@ -8,7 +8,7 @@ import com.github.ajalt.clikt.parameters.options.option
 import com.github.ajalt.clikt.parameters.options.unique
 import com.github.ajalt.clikt.parameters.types.choice
 import com.github.ajalt.clikt.parameters.types.long
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.common.PathUtil.classFqnToPath
 import org.utbot.common.PathUtil.replaceSeparator
 import org.utbot.common.PathUtil.toPath
@@ -45,7 +45,7 @@ import java.time.temporal.ChronoUnit
 
 private const val LONG_GENERATION_TIMEOUT = 1_200_000L
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 abstract class GenerateTestsAbstractCommand(name: String, help: String) :
     CliktCommand(name = name, help = help) {
@@ -151,21 +151,21 @@ abstract class GenerateTestsAbstractCommand(name: String, help: String) :
         return Paths.get(classAbsolutePath)
     }
 
-    protected fun generateTestSets(
-        testCaseGenerator: TestCaseGenerator,
-        targetMethods: List<ExecutableId>,
-        sourceCodeFile: Path? = null,
-        searchDirectory: Path,
-        chosenClassesToMockAlways: Set<ClassId>
-    ): List<UtMethodTestSet> =
-        testCaseGenerator.generate(
-            targetMethods,
-            mockStrategy,
-            chosenClassesToMockAlways,
-            generationTimeout
-        ).let {
-            if (sourceCodeFile != null) it.summarizeAll(searchDirectory, sourceCodeFile.toFile()) else it
-        }
+//    protected fun generateTestSets(
+//        testCaseGenerator: TestCaseGenerator,
+//        targetMethods: List<ExecutableId>,
+//        sourceCodeFile: Path? = null,
+//        searchDirectory: Path,
+//        chosenClassesToMockAlways: Set<ClassId>
+//    ): List<UtMethodTestSet> =
+//        testCaseGenerator.generate(
+//            targetMethods,
+//            mockStrategy,
+//            chosenClassesToMockAlways,
+//            generationTimeout
+//        ).let {
+//            if (sourceCodeFile != null) it.summarizeAll(searchDirectory, sourceCodeFile.toFile()) else it
+//        }
 
 
     protected fun withLogger(targetClassFqn: String, block: Runnable) {

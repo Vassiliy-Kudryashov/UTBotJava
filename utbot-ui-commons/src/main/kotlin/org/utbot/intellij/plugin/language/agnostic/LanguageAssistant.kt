@@ -1,6 +1,6 @@
 package org.utbot.intellij.plugin.language.agnostic
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import com.intellij.lang.Language
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -14,7 +14,7 @@ import com.intellij.psi.PsiFileSystemItem
 import org.jetbrains.kotlin.idea.core.util.toPsiDirectory
 import org.jetbrains.kotlin.idea.core.util.toPsiFile
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 abstract class LanguageAssistant {
 

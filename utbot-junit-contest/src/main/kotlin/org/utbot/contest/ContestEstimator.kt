@@ -10,7 +10,7 @@ import java.nio.file.StandardCopyOption
 import java.util.concurrent.CancellationException
 import java.util.concurrent.TimeUnit
 import java.util.zip.ZipInputStream
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.analytics.EngineAnalyticsContext
 import org.utbot.analytics.Predictors
 import org.utbot.common.FileUtil
@@ -37,7 +37,7 @@ import org.utbot.instrumentation.ConcreteExecutor
 import org.utbot.predictors.MLPredictorFactoryImpl
 import kotlin.math.min
 
-private val logger = KotlinLogging.logger {}
+private val logger =  UtLogging.logger {}
 
 private val classPathSeparator = System.getProperty("path.separator")
 //To hack it to debug something be like Duke

@@ -1,6 +1,6 @@
 package org.utbot.fuzzing.providers
 
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.framework.plugin.api.DirectFieldAccessId
 import org.utbot.framework.plugin.api.FieldId
 import org.utbot.framework.plugin.api.UtAssembleModel
@@ -24,7 +24,7 @@ class FieldValueProvider(
     private val fieldId: FieldId,
 ) : JavaValueProvider {
     companion object {
-        private val logger = KotlinLogging.logger {}
+        private val logger =  UtLogging.logger {}
     }
 
     override fun accept(type: FuzzedType): Boolean =

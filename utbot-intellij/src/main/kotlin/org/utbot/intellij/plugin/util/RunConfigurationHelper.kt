@@ -30,7 +30,7 @@ import com.intellij.psi.PsiFile
 import com.intellij.psi.SmartPsiElementPointer
 import com.intellij.psi.util.childrenOfType
 import java.util.Comparator
-import mu.KotlinLogging
+import org.utbot.framework.UtLogging
 import org.utbot.intellij.plugin.models.GenerateTestsModel
 import org.utbot.intellij.plugin.util.IntelliJApiHelper.run
 
@@ -64,7 +64,7 @@ class RunConfigurationHelper {
     }
 
     companion object {
-        private val logger = KotlinLogging.logger {}
+        private val logger =  UtLogging.logger {}
 
         private fun RunConfiguration.isPatternBased() = this is JavaTestConfigurationBase && "pattern".contentEquals(testType, true)
 
